@@ -130,7 +130,7 @@ nav ul li a:hover{color:#4a2f0a;}
       </aside>
     </section>
 
-    <!-- ABOUT -->
+    
     <section id="about" class="reveal">
       <h2>About</h2>
       <div class="card">
@@ -148,7 +148,7 @@ nav ul li a:hover{color:#4a2f0a;}
       </div>
     </section>
 
-    <!-- SKILLS -->
+    
     <section id="skills" class="reveal">
       <h2>Skills</h2>
       <div class="card" style="padding:24px">
@@ -217,8 +217,8 @@ nav ul li a:hover{color:#4a2f0a;}
 
     
 
-    <!-- EDUCATION / CERTIFICATIONS -->
-    <!-- EDUCATION -->
+    
+    
 <section id="education" class="reveal">
   <h2 style="font-size:28px;margin-bottom:20px">Education</h2>
   <div class="card" style="padding:28px;font-size:18px;line-height:1.6">
@@ -232,7 +232,7 @@ nav ul li a:hover{color:#4a2f0a;}
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+
 <section id="certifications" class="reveal" style="margin-top:40px">
   <h2 style="font-size:32px;margin-bottom:24px">Certifications</h2>
 
@@ -293,7 +293,7 @@ nav ul li a:hover{color:#4a2f0a;}
   </div>
 </section>
 
-    <!-- CONTACT -->
+    
     <section id="contact" class="reveal">
       <h2>Contact</h2>
       <div class="grid contact-grid">
@@ -329,10 +329,9 @@ nav ul li a:hover{color:#4a2f0a;}
   </footer>
 
   <script>
-    // Add current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Hamburger menu (simple)
+   
     const hamb = document.getElementById('hamb');
     hamb && hamb.addEventListener('click', ()=>{
       const ul = document.querySelector('nav ul');
@@ -340,20 +339,18 @@ nav ul li a:hover{color:#4a2f0a;}
       else ul.style.display = 'flex';
     });
 
-    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', (e)=>{
         const href = a.getAttribute('href');
         if(href.length>1){
           e.preventDefault();
           document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
-          // close mobile nav
+        
           const ul = document.querySelector('nav ul'); if(window.innerWidth<880) ul.style.display='';
         }
       })
     })
 
-    // On-scroll reveal
     const obs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting) e.target.classList.add('show');
@@ -361,7 +358,6 @@ nav ul li a:hover{color:#4a2f0a;}
     },{threshold:0.12});
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-    // Basic accessibility: enable keyboard nav for hamburger
     hamb && hamb.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') hamb.click(); });
   </script>
 </body>
