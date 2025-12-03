@@ -30,7 +30,7 @@ nav ul li a:hover{color:#4a2f0a;}
 
     /* Hamburger */
     .hamb{display:none;background:transparent;border:0;color:var(--accent);font-size:20px}
-    @media(max-width:880px){nav ul{display:none} .hamb{display:block}}
+    @media(max-width:880px){nav ul{display:none;flex-direction:column;background:#ffe3c4;position:absolute;top:70px;right:20px;padding:12px 18px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);} .hamb{display:block}}
 
     /* HERO */
     .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:80px 0;}
@@ -102,7 +102,7 @@ nav ul li a:hover{color:#4a2f0a;}
           
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="cta" href="#resume">Resume</a></li>
+          
         </ul>
         <button class="hamb" id="hamb">☰</button>
       </nav>
@@ -310,22 +310,15 @@ nav ul li a:hover{color:#4a2f0a;}
 
         <form class="card" action="https://formspree.io/f/your_form_id" method="POST">
           <h3>Send a message</h3>
-          <label style="display:block;margin-top:8px">Name<input name="name" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
-          <label style="display:block;margin-top:8px">Email<input name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
-          <label style="display:block;margin-top:8px">Message<textarea name="message" rows="4" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea></label>
+          <label style="display:block;margin-top:8px">Name<input name="name" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #000000;background:transparent;color:inherit"></label>
+          <label style="display:block;margin-top:8px">Email<input name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #000000;background:transparent;color:inherit"></label>
+          <label style="display:block;margin-top:8px">Message<textarea name="message" rows="4" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #000000;background:transparent;color:inherit"></textarea></label>
           <div style="margin-top:10px"><button type="submit" class="cta">Send</button></div>
         </form>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="reveal">
-      <h2>Resume</h2>
-      <div class="card">
-        <p class="muted">Download a copy of my resume (PDF). Make sure the file <code>kartik-kumar_cv.pdf</code> is uploaded to the same folder when you deploy this site.</p>
-        <a class="cta" href="kartik-kumar_cv.pdf" download>Download Resume</a>
-      </div>
-    </section>
+    
 
     
 
