@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kartik Kumar — Portfolio</title>
+  <meta name="description" content="Kartik Kumar | MCA Student | Cybersecurity & Cloud Computing" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#ffe3c4; --accent:#06b6d4; --muted:#333333; --glass: rgba(255,255,255,0.03);
+      --max-w:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#ffb37a 0%, #ff8a68 100%);color:#000000;-webkit-font-smoothing:antialiased;color:#000000;-webkit-font-smoothing:antialiased;color:#000000;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--max-w);margin:0 auto;padding:24px}
+
+    /* NAV */
+    header{position:sticky;top:12px;z-index:50}
+    .nav{display:flex;justify-content:space-between;align-items:center;background:transparent;padding:8px;border-radius:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#032;box-shadow:0 6px 18px rgba(3,6,23,0.6)}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .cta{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#022;font-weight:600}
+
+    /* Hamburger */
+    .hamb{display:none;background:transparent;border:0;color:var(--accent);font-size:20px}
+    @media(max-width:880px){nav ul{display:none} .hamb{display:block}}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:80px 0;}
+    .hero-card{background:#ffe3c4;padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .name{font-size:42px;margin:0 0 6px;}
+    .role{color:var(--muted);margin:0 0 14px}
+    .hero p{line-height:1.5;color:#cfe7f5}
+    .hero-photo{background:#ffe3c4;height:380px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#022;font-weight:700}
+    .hero-actions{margin-top:18px;display:flex;gap:12px}
+
+    /* SECTIONS */
+    section{margin-top:28px}
+    h2{margin:0 0 14px;font-size:20px}
+    .grid{display:grid;gap:18px}
+    .skills-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    .projects-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#ffe3c4;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,0.5)}
+
+    /* Progress bars */
+    .skill{margin-bottom:12px}
+    .skill strong{display:block;margin-bottom:6px}
+    .bar{height:10px;background:var(--glass);border-radius:999px;overflow:hidden}
+    .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7dd3fc)}
+
+    /* Projects */
+    .proj-thumb{height:140px;border-radius:8px;background:#061022;display:flex;align-items:center;justify-content:center;color:var(--muted);margin-bottom:12px}
+    .proj-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+
+    /* Footer / Contact */
+    .contact-grid{grid-template-columns:1fr 1fr}
+    .socials{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* Responsive adjustments */
+    @media(max-width:1100px){.container{padding:18px}} 
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .hero-photo{height:260px}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .muted{color:#333333}
+    button{cursor:pointer}
+
+    /* On-scroll animations */
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Resume download badge */
+    .resume-badge{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,#ffdf9e,#ffb86c);color:#4a2f0a;font-weight:700;border:2px solid #ffd28a;box-shadow:0 4px 12px rgba(0,0,0,0.25);transition:transform .2s;width:auto;max-width:100%;text-align:center;}
+.resume-badge:hover{transform:scale(1.05);}
+.resume-badge:hover{transform:scale(1.05);}
+  @media(max-width:480px){.resume-badge{width:100%;padding:14px 20px;font-size:16px;}}
+</style>
+</head>
+<body>
+  <header class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">KK</div>
+        <div>
+          <div style="font-weight:700">Kartik Kumar</div>
+          <div style="font-size:12px;color:var(--muted)">MCA Student • Cybersecurity & Cloud</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="cta" href="#resume">Resume</a></li>
+        </ul>
+        <button class="hamb" id="hamb">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero reveal">
+      <div class="hero-card">
+        <h1 class="name">Kartik Kumar</h1>
+        <p class="role">MCA Student | Cybersecurity & Cloud Computing | CEH • CHFI • AZ-900</p>
+        <p>Dynamic technology enthusiast with foundational knowledge in cybersecurity and cloud computing. Passionate about safeguarding digital assets and building resilient cloud-native solutions.</p>
+        <div class="hero-actions">
+          
+          <a class="resume-badge" href="kartik-kumar_cv.pdf" download>Download Resume (PDF)</a>
+        </div>
+
+        <div style="margin-top:18px" class="muted">
+          <strong>Contact:</strong> kartikkumar12110300@gmail.com • 08727089869
+        </div>
+      </div>
+
+      <aside class="hero-photo card reveal">
+        <!-- placeholder image/illustration -->
+        <div style="text-align:center;padding:20px">
+          <div style="font-size:18px;font-weight:700">Professional Photo</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:8px">Replace this box with your photo</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <h2>About</h2>
+      <div class="card">
+        <p><strong>Summary:</strong> Dynamic technology enthusiast with foundational knowledge in cybersecurity and cloud computing. Demonstrated passion in proactive security measures and cloud best-practices. Seeking to launch and grow a career in technology.</p>
+        <p><strong>Interests & Career Goals:</strong> Penetration testing, digital forensics, cloud security, and DevSecOps. Aim to work on security automation and secure cloud platforms.</p>
+        <div style="margin-top:12px">
+          <strong>Key Skills:</strong>
+          <ul style="margin:8px 0 0 18px">
+            <li>Python, Java, C, SQL, HTML, CSS, JavaScript</li>
+            <li>Linux (Kali, Red Hat), Windows</li>
+            <li>Cloud: AWS, Azure (AZ-900)</li>
+            <li>Certifications: CEH, CHFI, RHCSA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="card" style="padding:24px">
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+
+          <div>
+            <h3 style="margin-bottom:10px">Programming</h3>
+            <div class="tag-list" style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom:10px">Tools & Technologies</h3>
+            <div class="tag-list" style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Windows</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Azure</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom:10px">Cybersecurity</h3>
+            <div class="tag-list" style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Penetration Testing</span>
+              <span class="tag">Digital Forensics</span>
+              <span class="tag">Kali Linux</span>
+              <span class="tag">CHFI</span>
+              <span class="tag">CEH</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom:10px">Soft Skills</h3>
+            <div class="tag-list" style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Communication</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Adaptability</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .tag{
+        padding:6px 12px;
+        background:#f9cda9;
+        color:#000000;
+        border-radius:20px;
+        font-size:14px;
+        font-weight:600;
+        box-shadow:0 2px 6px rgba(0,0,0,0.15);
+        display:inline-block;
+      }
+    </style>
+
+    
+
+    <!-- EDUCATION / CERTIFICATIONS -->
+    <!-- EDUCATION -->
+<section id="education" class="reveal">
+  <h2 style="font-size:28px;margin-bottom:20px">Education</h2>
+  <div class="card" style="padding:28px;font-size:18px;line-height:1.6">
+    <strong style="font-size:20px">Bachelor of Computer Applications (Cyber Security & Cloud Computing)</strong>
+    <div class="muted" style="margin-top:6px;font-size:16px">IIMT University, Meerut • 2025</div>
+
+    <div style="margin-top:16px">
+      <strong style="font-size:18px">Schooling</strong>
+      <div class="muted" style="font-size:16px;margin-top:6px">DC Model International School • Punjab • 2022</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="reveal" style="margin-top:40px">
+  <h2 style="font-size:32px;margin-bottom:24px">Certifications</h2>
+
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+
+    <div class="card" style="padding:28px">
+      <h3 style="font-size:22px;margin-bottom:10px">CEH — Certified Ethical Hacker</h3>
+      <p class="muted" style="font-size:16px;line-height:1.6">Completed from E&ICT IIT Kanpur (2024). Gained strong understanding of penetration testing, vulnerabilities, reconnaissance, exploitation techniques, and ethical hacking methodologies.</p>
+      <ul style="margin-top:10px;padding-left:20px;font-size:16px;line-height:1.6">
+        <li>Footprinting & Enumeration</li>
+        <li>System Hacking & Malware</li>
+        <li>Web App Security</li>
+        <li>Network Attacks & Defense</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:28px">
+      <h3 style="font-size:22px;margin-bottom:10px">CHFI — Computer Hacking Forensic Investigator</h3>
+      <p class="muted" style="font-size:16px;line-height:1.6">Completed from E&ICT IIT Kanpur (2024). Learned in‑depth digital forensics techniques, evidence acquisition, chain of custody, and file system analysis.</p>
+      <ul style="margin-top:10px;padding-left:20px;font-size:16px;line-height:1.6">
+        <li>Disk & File System Forensics</li>
+        <li>Network Forensics</li>
+        <li>Email Crime Investigation</li>
+        <li>Data Recovery & Reporting</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:28px">
+      <h3 style="font-size:22px;margin-bottom:10px">AZ‑900 — Microsoft Azure Fundamentals</h3>
+      <p class="muted" style="font-size:16px;line-height:1.6">Certified in Azure cloud essentials including cloud concepts, core Azure services, identity, governance, pricing, and support models.</p>
+      <ul style="margin-top:10px;padding-left:20px;font-size:16px;line-height:1.6">
+        <li>Azure Compute & Storage</li>
+        <li>Security, Compliance & IAM</li>
+        <li>Azure Networking Basics</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:28px">
+      <h3 style="font-size:22px;margin-bottom:10px">RHCSA — Red Hat Certified System Administrator</h3>
+      <p class="muted" style="font-size:16px;line-height:1.6">Hands‑on training in Linux system administration, server configuration, user permissions, and shell operations.</p>
+      <ul style="margin-top:10px;padding-left:20px;font-size:16px;line-height:1.6">
+        <li>Linux CLI & Shell Scripting</li>
+        <li>System Services & Processes</li>
+        <li>Storage & File Management</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:28px">
+      <h3 style="font-size:22px;margin-bottom:10px">NPTEL — Ethical Hacking</h3>
+      <p class="muted" style="font-size:16px;line-height:1.6">Completed NPTEL course focusing on fundamentals of cyber attacks, system vulnerabilities, and security best practices.</p>
+      <ul style="margin-top:10px;padding-left:20px;font-size:16px;line-height:1.6">
+        <li>OWASP Top 10</li>
+        <li>Network Scanning</li>
+        <li>Vulnerability Assessment</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <div class="grid contact-grid">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p class="muted">Email: <a href="mailto:kartikkumar12110300@gmail.com">kartikkumar12110300@gmail.com</a></p>
+          <p class="muted">Phone: 08727089869</p>
+          <div style="margin-top:8px" class="socials">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">LeetCode</a>
+          </div>
+        </div>
+
+        <form class="card" action="https://formspree.io/f/your_form_id" method="POST">
+          <h3>Send a message</h3>
+          <label style="display:block;margin-top:8px">Name<input name="name" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
+          <label style="display:block;margin-top:8px">Email<input name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></label>
+          <label style="display:block;margin-top:8px">Message<textarea name="message" rows="4" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea></label>
+          <div style="margin-top:10px"><button type="submit" class="cta">Send</button></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="reveal">
+      <h2>Resume</h2>
+      <div class="card">
+        <p class="muted">Download a copy of my resume (PDF). Make sure the file <code>kartik-kumar_cv.pdf</code> is uploaded to the same folder when you deploy this site.</p>
+        <a class="cta" href="kartik-kumar_cv.pdf" download>Download Resume</a>
+      </div>
+    </section>
+
+    
+
+  </main>
+
+  <footer class="container" style="padding:28px 24px 60px">
+    <div style="text-align:center;color:var(--muted)">© <span id="year"></span> Kartik Kumar — Built with HTML, CSS & JS • Hosted: GitHub Pages / Netlify / Vercel</div>
+  </footer>
+
+  <script>
+    // Add current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger menu (simple)
+    const hamb = document.getElementById('hamb');
+    hamb && hamb.addEventListener('click', ()=>{
+      const ul = document.querySelector('nav ul');
+      if(ul.style.display === 'flex') ul.style.display = '';
+      else ul.style.display = 'flex';
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile nav
+          const ul = document.querySelector('nav ul'); if(window.innerWidth<880) ul.style.display='';
+        }
+      })
+    })
+
+    // On-scroll reveal
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('show');
+      })
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // Basic accessibility: enable keyboard nav for hamburger
+    hamb && hamb.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') hamb.click(); });
+  </script>
+</body>
+</html>
