@@ -23,7 +23,9 @@
     .nav{display:flex;justify-content:space-between;align-items:center;background:transparent;padding:8px;border-radius:12px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#032;box-shadow:0 6px 18px rgba(3,6,23,0.6)}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;}
+nav ul li a{color:#000000;font-weight:600;}
+nav ul li a:hover{color:#4a2f0a;}
     .cta{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#022;font-weight:600}
 
     /* Hamburger */
@@ -32,10 +34,10 @@
 
     /* HERO */
     .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:80px 0;}
-    .hero-card{background:#ffe3c4;padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .hero-card{background:#ffe3c4;padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);color:#000000}
     .name{font-size:42px;margin:0 0 6px;}
-    .role{color:var(--muted);margin:0 0 14px}
-    .hero p{line-height:1.5;color:#cfe7f5}
+    .role{color:#000000;margin:0 0 14px}
+    .hero p{line-height:1.5;color:#000000}
     .hero-photo{background:#ffe3c4;height:380px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#022;font-weight:700}
     .hero-actions{margin-top:18px;display:flex;gap:12px}
 
@@ -124,11 +126,7 @@
       </div>
 
       <aside class="hero-photo card reveal">
-        <!-- placeholder image/illustration -->
-        <div style="text-align:center;padding:20px">
-          <div style="font-size:18px;font-weight:700">Professional Photo</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:8px">Replace this box with your photo</div>
-        </div>
+        <img src="1000016748.jpg" alt="Kartik Kumar Photo" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
       </aside>
     </section>
 
